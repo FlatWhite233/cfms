@@ -1,0 +1,55 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :p:42:p, par t {comp button3::t:p::p, comp button2::t:p::p, comp button1::t:p::p}, space :p:40:p, par l:::p {seq {comp label1:::p::p, space s:::p, comp label2:::p::p, space :::x, comp label3:::p::p}, comp scrollPane1:::p:173:p}, space :p:67:p}, seq t {space :::p, comp button4:::p:76:p, space :p:35:p}}"
+			"$verticalGroup": "par l {seq t {space ::21:x, par b {comp label1::b:p::p, comp label2::b:p::p, comp label3::b:p::p}, par l {seq {space :::p, comp scrollPane1:::p:158:p}, seq l {space :p:17:p, comp button1:::p::p, space s:::p, comp button2:::p::p, space s:::p, comp button3:::p::p}}, space s:::p, comp button4:::p::p, space ::19:x}}"
+		} ) {
+			name: "this"
+			"title": "班级管理"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "list1"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查询班级"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "query", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "新增班级"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "add", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "修改班级"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "update", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"text": "返回"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "back", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "班级ID"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "班级名称"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "班费金额"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

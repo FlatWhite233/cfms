@@ -1,0 +1,69 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:42:p, par l {par t:l {comp button3::t:p::p, comp button2::t:p::p, comp button1::t:p::p}, comp button6:::p::p}, space :p:40:p, par l {seq {par l:::p {seq {comp label1:::p::p, space s:::p, comp label4:::p::p, space :::x, comp label2:::p::p, space s:::p, comp label3:::p::p}, comp scrollPane1:::p:250:p}, space ::39:x}, seq {comp button5:::p::p, space ::64:x, comp button4:::p:76:p, space :p:31:p}}}}"
+			"$verticalGroup": "par l {seq t {space ::23:x, par b {comp label1::b:p::p, comp label3::b:p::p, comp label2::b:p::p, comp label4::b:p::p}, space :::p, par l {comp scrollPane1:::p:158:p, seq {comp button1:::p::p, space s:::p, comp button2:::p::p, space s:::p, comp button3:::p::p, space s:::p, comp button6:::p::p}}, space s:::p, par b {comp button4::b:p::p, comp button5::b:p::p}, space ::24:x}}"
+		} ) {
+			name: "this"
+			"title": "学生管理"
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JList" ) {
+					name: "list1"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "查询学生"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "query", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "新增学生"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "add", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "修改学生"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "update", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button4"
+				"text": "返回"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "back", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "学号"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "姓名"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "是否为班级管理员"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button5"
+				"text": "设置班级管理员"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "set", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "班级ID"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button6"
+				"text": "删除学生"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "delete", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 455, 315 )
+		} )
+	}
+}

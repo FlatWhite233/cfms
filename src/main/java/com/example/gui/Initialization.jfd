@@ -1,0 +1,37 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space ::136:x, comp label2:::p::p, space :p:130:p}, seq l {space :p:33:p, comp button1:::p:95:p, space s:::p, comp button2:::p:105:p, space s:::p, comp button3:::p:95:p, space ::34:x}}"
+			"$verticalGroup": "par l {seq l {space :p:59:p, comp label2:::p:40:p, space :p:50:p, par b {comp button1::b:p:40:p, comp button2::b:p:40:p, comp button3::b:p:40:p}, space ::79:x}}"
+		} ) {
+			name: "this"
+			"title": "班费管理系统"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "班费管理系统"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 10, false )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "管理员"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "admin", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": "班级管理员"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "clazzmanager", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button3"
+				"text": "学生"
+				addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "student", true ) )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.ClazzManagerMapper">
+    <select id="getClazzManager" resultType="student">
+        select * from student
+        where stu_name = #{stuName}
+        and stu_is_manager = 1
+    </select>
+
+    <select id="getBalance" resultType="clazz">
+        select * from clazz
+        where clazz_id = #{clazzId}
+    </select>
+
+    <select id="listClazzFee" resultType="ClazzFee">
+        select * from clazzfee
+    </select>
+
+    <update id="updateClazzFeeSatuts" parameterType="map">
+        update clazzfee
+        set clazzfee_status = 1
+        where clazzfee_id = #{clazzfeeId}
+    </update>
+
+    <update id="updateClazzFee" parameterType="map">
+        update clazz
+        set clazz_fee = clazz_fee +
+                        (select clazzfee_change from clazzfee
+                         where clazzfee_id = #{clazzfeeId} and clazzfee_status = 1)
+        where clazz_id = (select clazz_id from clazzfee where clazzfee_id = #{clazzfeeId})
+    </update>
+
+</mapper>

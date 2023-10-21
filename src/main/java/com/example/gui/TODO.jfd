@@ -1,0 +1,21 @@
+JFDML JFormDesigner: "7.0.4.0.360" Java: "11.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space ::47:x, comp label1:::p::p, space :p:45:p}}"
+			"$verticalGroup": "par l {seq l {space :p:79:p, comp label1:::p::p, space ::79:x}}"
+		} ) {
+			name: "this"
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "该功能在另一个客户端实现！"
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 5, false )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 315, 215 )
+		} )
+	}
+}

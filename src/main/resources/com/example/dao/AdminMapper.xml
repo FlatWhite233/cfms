@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.AdminMapper">
+    <select id="adminLogin" parameterType="map" resultType="admin">
+        select * from admin
+        where admin_account = #{adminAccount}
+    </select>
+
+    <select id="listClazz" resultType="Clazz">
+        select * from clazz
+    </select>
+
+    <insert id="insertClazz" parameterType="map">
+        insert into clazz(clazz_id, clazz_name, clazz_fee)
+        values (null, #{clazzName}, #{clazzFee})
+    </insert>
+
+    <update id="updateClazz" parameterType="map">
+        update clazz
+        set clazz_name = #{clazzName}, clazz_fee = #{clazzFee}
+        where clazz_id = #{clazzId}
+    </update>
+
+    <select id="listStudent" resultType="Student">
+        select * from student
+    </select>
+
+    <insert id="insertStudent" parameterType="map">
+        insert into student(stu_id, clazz_id, stu_name, stu_is_manager)
+        values (null, #{clazzId}, #{stuName} ,#{stuIsManager})
+    </insert>
+
+    <update id="updateStudent" parameterType="map">
+        update student
+        set stu_name = #{stuName}
+        where stu_id = #{stuId}
+    </update>
+
+    <delete id="deleteStudent" parameterType="map">
+        delete from student
+        where stu_id = #{stuId}
+    </delete>
+
+    <update id="setClazzManager" parameterType="map">
+        update student
+        set stu_is_manager = #{stuIsManager}
+        where stu_id = #{stuId}
+    </update>
+
+</mapper>

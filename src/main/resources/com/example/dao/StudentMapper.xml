@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.StudentMapper">
+    <select id="getStudent" resultType="student">
+        select * from student
+        where stu_name = #{stuName}
+    </select>
+
+    <select id="listThisClazzFee" resultType="clazzfee">
+        select * from clazzfee
+        where clazz_id = #{clazzId}
+    </select>
+
+    <select id="getBalance" resultType="clazz">
+        select * from clazz
+        where clazz_id = #{clazzId}
+    </select>
+
+    <insert id="insertClazzfee" parameterType="map">
+        insert into clazzfee(clazzfee_id, stu_id, clazz_id, clazzfee_time, clazzfee_use, clazzfee_change, clazzfee_status)
+        values (null, #{stuId}, #{clazzId}, NOW(), #{clazzfeeUse}, #{clazzfeeChange}, 0)
+    </insert>
+</mapper>
